@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PlanyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="katedra">
+    <Key>
+      <PropertyRef Name="id_katedra" />
+    </Key>
+    <Property Name="id_katedra" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="nazwa" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="id_kierunek" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kierunek">
+    <Key>
+      <PropertyRef Name="id_kierunek" />
+    </Key>
+    <Property Name="id_kierunek" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="nazwa" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="wydzial" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="pracownicy">
+    <Key>
+      <PropertyRef Name="id_pracownik" />
+    </Key>
+    <Property Name="id_pracownik" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_wykladowcy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="id_katedra" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="imie" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="nazwisko" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="rok_urodzenia" Type="DateTime" Precision="3" />
+    <Property Name="obecnosc_dzieci" Type="Int16" />
+    <Property Name="ile_dzieci" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="plec" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="przedmiot">
+    <Key>
+      <PropertyRef Name="id_przedmiot" />
+    </Key>
+    <Property Name="id_przedmiot" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="nazwa" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ile_godzin" Type="DateTime" Precision="3" />
+    <Property Name="typ_zajec" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="semestr" Type="Int32" />
+    <Property Name="id_katedra" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="id_specjalnosc" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="id_pracownik" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="specjalnosc">
+    <Key>
+      <PropertyRef Name="id_specjalnosc" />
+    </Key>
+    <Property Name="id_specjalnosc" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_katedra" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="nazwa" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="stopien" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="studenci">
+    <Key>
+      <PropertyRef Name="id_studenci" />
+    </Key>
+    <Property Name="id_studenci" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_katedra" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="id_stypendum" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="id_specjalnosc" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_kierunek" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="imie" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="nazwisko" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="rok_urodzenia" Type="DateTime" Precision="3" />
+    <Property Name="obecnosc_dzieci" Type="Int16" />
+    <Property Name="ile_dzieci" Type="Int32" />
+    <Property Name="plec" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="grupa" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="stypendium">
+    <Key>
+      <PropertyRef Name="id_stypendum" />
+    </Key>
+    <Property Name="id_stypendum" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="rodzaj" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="kwota" Type="Decimal" Precision="8" Scale="2" />
+  </EntityType>
+  <EntityType Name="wykladowcy">
+    <Key>
+      <PropertyRef Name="id_wykladowcy" />
+    </Key>
+    <Property Name="id_wykladowcy" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="stopien" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="kategoria" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="PlanyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="katedra" EntityType="Self.katedra" />
+    <EntitySet Name="kierunek" EntityType="Self.kierunek" />
+    <EntitySet Name="pracownicy" EntityType="Self.pracownicy" />
+    <EntitySet Name="przedmiot" EntityType="Self.przedmiot" />
+    <EntitySet Name="specjalnosc" EntityType="Self.specjalnosc" />
+    <EntitySet Name="studenci" EntityType="Self.studenci" />
+    <EntitySet Name="stypendium" EntityType="Self.stypendium" />
+    <EntitySet Name="wykladowcy" EntityType="Self.wykladowcy" />
+  </EntityContainer>
+</Schema>

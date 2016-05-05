@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PlanyModelStoreContainer" CdmEntityContainer="PlanyEntities">
+    <EntitySetMapping Name="katedra">
+      <EntityTypeMapping TypeName="PlanyModel.katedra">
+        <MappingFragment StoreEntitySet="katedra">
+          <ScalarProperty Name="id_katedra" ColumnName="id_katedra" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+          <ScalarProperty Name="id_kierunek" ColumnName="id_kierunek" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kierunek">
+      <EntityTypeMapping TypeName="PlanyModel.kierunek">
+        <MappingFragment StoreEntitySet="kierunek">
+          <ScalarProperty Name="id_kierunek" ColumnName="id_kierunek" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+          <ScalarProperty Name="wydzial" ColumnName="wydzial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pracownicy">
+      <EntityTypeMapping TypeName="PlanyModel.pracownicy">
+        <MappingFragment StoreEntitySet="pracownicy">
+          <ScalarProperty Name="id_pracownik" ColumnName="id_pracownik" />
+          <ScalarProperty Name="id_wykladowcy" ColumnName="id_wykladowcy" />
+          <ScalarProperty Name="id_katedra" ColumnName="id_katedra" />
+          <ScalarProperty Name="imie" ColumnName="imie" />
+          <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+          <ScalarProperty Name="rok_urodzenia" ColumnName="rok_urodzenia" />
+          <ScalarProperty Name="obecnosc_dzieci" ColumnName="obecnosc_dzieci" />
+          <ScalarProperty Name="ile_dzieci" ColumnName="ile_dzieci" />
+          <ScalarProperty Name="plec" ColumnName="plec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="przedmiot">
+      <EntityTypeMapping TypeName="PlanyModel.przedmiot">
+        <MappingFragment StoreEntitySet="przedmiot">
+          <ScalarProperty Name="id_przedmiot" ColumnName="id_przedmiot" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+          <ScalarProperty Name="ile_godzin" ColumnName="ile_godzin" />
+          <ScalarProperty Name="typ_zajec" ColumnName="typ_zajec" />
+          <ScalarProperty Name="semestr" ColumnName="semestr" />
+          <ScalarProperty Name="id_katedra" ColumnName="id_katedra" />
+          <ScalarProperty Name="id_specjalnosc" ColumnName="id_specjalnosc" />
+          <ScalarProperty Name="id_pracownik" ColumnName="id_pracownik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="specjalnosc">
+      <EntityTypeMapping TypeName="PlanyModel.specjalnosc">
+        <MappingFragment StoreEntitySet="specjalnosc">
+          <ScalarProperty Name="id_specjalnosc" ColumnName="id_specjalnosc" />
+          <ScalarProperty Name="id_katedra" ColumnName="id_katedra" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+          <ScalarProperty Name="stopien" ColumnName="stopien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="studenci">
+      <EntityTypeMapping TypeName="PlanyModel.studenci">
+        <MappingFragment StoreEntitySet="studenci">
+          <ScalarProperty Name="id_studenci" ColumnName="id_studenci" />
+          <ScalarProperty Name="id_katedra" ColumnName="id_katedra" />
+          <ScalarProperty Name="id_stypendum" ColumnName="id_stypendum" />
+          <ScalarProperty Name="id_specjalnosc" ColumnName="id_specjalnosc" />
+          <ScalarProperty Name="id_kierunek" ColumnName="id_kierunek" />
+          <ScalarProperty Name="imie" ColumnName="imie" />
+          <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+          <ScalarProperty Name="rok_urodzenia" ColumnName="rok_urodzenia" />
+          <ScalarProperty Name="obecnosc_dzieci" ColumnName="obecnosc_dzieci" />
+          <ScalarProperty Name="ile_dzieci" ColumnName="ile_dzieci" />
+          <ScalarProperty Name="plec" ColumnName="plec" />
+          <ScalarProperty Name="grupa" ColumnName="grupa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stypendium">
+      <EntityTypeMapping TypeName="PlanyModel.stypendium">
+        <MappingFragment StoreEntitySet="stypendium">
+          <ScalarProperty Name="id_stypendum" ColumnName="id_stypendum" />
+          <ScalarProperty Name="rodzaj" ColumnName="rodzaj" />
+          <ScalarProperty Name="kwota" ColumnName="kwota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wykladowcy">
+      <EntityTypeMapping TypeName="PlanyModel.wykladowcy">
+        <MappingFragment StoreEntitySet="wykladowcy">
+          <ScalarProperty Name="id_wykladowcy" ColumnName="id_wykladowcy" />
+          <ScalarProperty Name="stopien" ColumnName="stopien" />
+          <ScalarProperty Name="kategoria" ColumnName="kategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

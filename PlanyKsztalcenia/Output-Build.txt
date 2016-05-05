@@ -1,0 +1,3 @@
+﻿1>------ Rebuild All started: Project: Plany, Configuration: Debug Any CPU ------
+1>  Plany -> D:\PULPIT\VI SEMESTR\Projekt Bazy Danych\PLANYKSZTALCENIA\Plany\Plany\bin\Debug\Plany.exe
+========== Rebuild All: 1 succeeded, 0 failed, 0 skipped ==========

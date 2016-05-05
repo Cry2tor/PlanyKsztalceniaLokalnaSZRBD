@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PlanyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="katedra">
+    <Key>
+      <PropertyRef Name="id_katedra" />
+    </Key>
+    <Property Name="id_katedra" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="nazwa" Type="text" />
+    <Property Name="id_kierunek" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kierunek">
+    <Key>
+      <PropertyRef Name="id_kierunek" />
+    </Key>
+    <Property Name="id_kierunek" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="wydzial" Type="text" />
+    <Property Name="nazwa" Type="text" />
+  </EntityType>
+  <EntityType Name="pracownicy">
+    <Key>
+      <PropertyRef Name="id_pracownik" />
+    </Key>
+    <Property Name="id_pracownik" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_wykladowcy" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="id_katedra" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="imie" Type="text" />
+    <Property Name="nazwisko" Type="text" />
+    <Property Name="obecnosc_dzieci" Type="smallint" />
+    <Property Name="ile_dzieci" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="plec" Type="char" MaxLength="1" />
+    <Property Name="pokój" Type="int" />
+    <Property Name="stopien" Type="text" />
+    <Property Name="kategoria" Type="text" />
+    <Property Name="login" Type="text" />
+    <Property Name="haslo" Type="text" />
+    <Property Name="czy_wykladowca" Type="char" MaxLength="10" />
+    <Property Name="rok_urodzenia" Type="int" />
+  </EntityType>
+  <EntityType Name="przedmiot">
+    <Key>
+      <PropertyRef Name="id_przedmiot" />
+    </Key>
+    <Property Name="id_przedmiot" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="nazwa" Type="text" />
+    <Property Name="ile_godzin" Type="int" />
+    <Property Name="typ_zajec" Type="text" />
+    <Property Name="semestr" Type="int" />
+    <Property Name="id_katedra" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="id_specjalnosc" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="id_pracownik" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="specjalnosc">
+    <Key>
+      <PropertyRef Name="id_specjalnosc" />
+    </Key>
+    <Property Name="id_specjalnosc" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_katedra" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="nazwa" Type="text" />
+    <Property Name="stopien" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="studenci">
+    <Key>
+      <PropertyRef Name="id_studenci" />
+    </Key>
+    <Property Name="id_studenci" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_katedra" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="id_stypendum" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="id_specjalnosc" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_kierunek" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="imie" Type="text" />
+    <Property Name="nazwisko" Type="text" />
+    <Property Name="obecnosc_dzieci" Type="smallint" />
+    <Property Name="ile_dzieci" Type="int" />
+    <Property Name="plec" Type="char" MaxLength="1" />
+    <Property Name="grupa" Type="char" MaxLength="5" />
+    <Property Name="login" Type="text" />
+    <Property Name="haslo" Type="text" />
+    <Property Name="rok_urodzenia" Type="int" />
+  </EntityType>
+  <EntityType Name="stypendium">
+    <Key>
+      <PropertyRef Name="id_stypendum" />
+    </Key>
+    <Property Name="id_stypendum" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="kwota" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="rodzaj" Type="text" />
+  </EntityType>
+  <EntityContainer Name="PlanyModelStoreContainer">
+    <EntitySet Name="katedra" EntityType="Self.katedra" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kierunek" EntityType="Self.kierunek" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pracownicy" EntityType="Self.pracownicy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="przedmiot" EntityType="Self.przedmiot" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="specjalnosc" EntityType="Self.specjalnosc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="studenci" EntityType="Self.studenci" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="stypendium" EntityType="Self.stypendium" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
